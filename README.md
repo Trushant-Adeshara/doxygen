@@ -3,7 +3,8 @@ Contains installation, setup and usage guide for doxygen for code documentation
 
 #### Table of Content
 1. [Installation](#installation)
-2. [Configuration File](#creating-a-configration-file)
+2. [Configuration File](#configration-file)
+
 ## Installation
 [Link to official guide](https://doxygen.nl/download.html)
 
@@ -46,7 +47,7 @@ Check installation:
 doxygen --version
 ```
 
-## Creating a configuration file
+## Configuration File
 
 Each project should have its own configuration file which is used by Doxygen. Inorder to create a template configuration file, use following command:
 ```
@@ -66,4 +67,4 @@ Note:
 EXCLUDE_PATTERNS= */test/*
 ```
  
-
+[Refer](https://caiorss.github.io/C-Cpp-Notes/Doxygen-documentation.html#orgdb236cd)
