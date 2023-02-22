@@ -3,7 +3,7 @@ Contains installation, setup and usage guide for doxygen for code documentation
 
 #### Table of Content
 1. [Installation](#installation)
-2. [Configuration File](#configration-file)
+2. [Configuration File](#configuration-file)
 
 ## Installation
 [Link to official guide](https://doxygen.nl/download.html)
