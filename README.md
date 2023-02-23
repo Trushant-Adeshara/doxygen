@@ -8,7 +8,7 @@ Contains installation, setup and usage guide for doxygen for code documentation
 	- 1.2. [Standard](#standard)
 2. [Configuration File](#configuration-file)
 3. [Tag Reference](#tag-reference)
-
+4. [Examples](#examples)
 
 ## Installation
 
@@ -262,3 +262,54 @@ Following tags should be used to document Functions, Classes, Methods and so on
 | ```@li```                            | Bullet point                                                      |
 | ```@todo <TODO-NOTE>```              | TODO annotation, remainders about what is still needs to be done. | 
 
+
+## Examples
+
+### Type Aliases
+
+Simple type alias:
+```
+/// Mathematical function of type double
+using MathFunc = std::function<double (double)>;
+```
+
+Output:
+![](./Attachments/MathFunc.png)
+
+Templated type alias:
+```
+/// Generic math function
+/// @tparam T Any float-point type such as float, double or long double
+template<class T>
+uaing MathFuncGen = std::function<T (T)>;
+```
+
+Output:
+![](./Attachments/MathFuncGen.png)
+
+### Enumeration MathErrorCode
+
+Enumeration code
+```
+/// @brief Mathematical error code
+enum class MathErrorCode: std::uint32_t {
+	/// Bit 0 (value 0x00 or 0) not set => Means no error
+	E_OK          = 0x00,
+	/// bit 0 (value 0x01 or 1) means that an error of any type happened
+	E_ERROR       = 0x01,
+	/// bit 1 (value 0x02 or 2) Overflow error
+	E_OVERFLOW    = 0x02,
+	/// bit 2 (value 0x04 or 4) Undeflow error
+	E_UNDERFLOW   = 0x04,
+	/// bit 3 (value 0x08 or 8) Not a number
+	E_NAN         = 0x08,
+	/// bit 4 (value 0x10 or 16) Root, series or algorithm result doesn't converge.
+	E_CONVERGENCE = 0x10,
+	/// bit 5 (value 0x20 or 16) Maximum iterations reached
+	E_MAX_ITER    = 0x20
+};
+```
+
+Output:
+![](./Attachments/MathErrorCodeA.png)
+![](./Attachments/MathErrorCodeB.png)
