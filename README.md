@@ -10,8 +10,13 @@ Contains installation, setup and usage guide for doxygen for code documentation
 3. [Tag Reference](#tag-reference)
 4. [Examples](#examples)
 	- 4.1. [Type Aliases](#type-aliases)
-	- 4.2. [Enumberation](#enumeration)
+	- 4.2. [Enumeration](#enumeration)
 	- 4.3. [Function](#function)
+		- 4.3.1. [C Plus Plus](#c-plus-plus)
+		- 4.3.2. [C](#c)
+	- 4.4. [Class](#class)
+	- 4.5. [Constructor](#constructor)
+	- 4.6. [Method](#method)
 
 ## Installation
 
