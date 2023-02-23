@@ -9,6 +9,9 @@ Contains installation, setup and usage guide for doxygen for code documentation
 2. [Configuration File](#configuration-file)
 3. [Tag Reference](#tag-reference)
 4. [Examples](#examples)
+	- 4.1. [Type Aliases](#type-aliases)
+	- 4.2. [Enumberation](#enumeration)
+	- 4.3. [Function](#function)
 
 ## Installation
 
@@ -273,7 +276,6 @@ Simple type alias:
 using MathFunc = std::function<double (double)>;
 ```
 
-Output:
 ![](./Attachments/MathFunc.png)
 
 Templated type alias:
@@ -284,10 +286,9 @@ template<class T>
 uaing MathFuncGen = std::function<T (T)>;
 ```
 
-Output:
 ![](./Attachments/MathFuncGen.png)
 
-### Enumeration MathErrorCode
+### Enumeration
 
 Enumeration code
 ```
@@ -313,3 +314,147 @@ enum class MathErrorCode: std::uint32_t {
 Output:
 ![](./Attachments/MathErrorCodeA.png)
 ![](./Attachments/MathErrorCodeB.png)
+
+### Function
+
+#### C Plus Plus
+```
+/** @brief Contains non-linear equations solvers */
+namespace MathUtils::Solvers{
+   ... ....    ... ....    ... .... 
+
+   ///  @brief Solves non-linear equation with Newton method.
+   ///
+   ///  @tparam T   Any float-point type such as float, double or long double
+   ///  @param fun  Non-linear function f(x)
+   ///  @param dfun Derivative of non-linear function df(x) = d/dx f(x)
+   ///  @param x0   Initial guess 
+   ///  @param eps  Tolerance for stopping criteria. 
+   ///  @return     Equation result as a float point type T.
+   ///
+   ///  @details
+   ///  Solves non-linear equation using Newton method. This function needs two
+   ///  functions, the function to be solved @p fun and its derivate @p dfun
+   /// 
+   ///  @note     The function f(x) must be continues and differentiable.
+   ///  @warning  Throws NonCoverge exception when the root is not found.
+   /// 
+   ///  @see NewtonSolver
+   ///  @see https://en.wikipedia.org/wiki/Newton%27s_method    
+   ///
+   ///  Example: 
+   ///  @code 
+   ///    // Solve f(x) = x^2 - 25.0 , df(x) = 2x around x0 = 10.0
+   ///    auto fun = [](double x){ return x * x -  25.0 };
+   ///    auto dfun = [](double x){ return 2 * x; }
+   ///     
+   ///    double root = GenericNewtonsolver(fun, dfun, 10.0, 0.001);
+   ///    std::cout << "Root = " << root << std::endl;
+   ///  @endcode
+   ///  
+  template<typename T>  
+  auto GenericNewtonSolver(MathFuncGen<T> fun, MathFuncGen<T> dfun, T x0, T eps) -> T;
+
+} // --- End of Namespace  MathUtils::Solvers ----//
+```
+
+![](./Attachments/Function.png)
+
+
+#### C
+```
+/**  @brief C++ implementation of Fotran BLAS daxypy       
+     Computes the equation ys[i] <- xs[i] * alpha + beta     
+
+     @note Function with C-linkage. 
+
+     @param[in]      n      Array size. Size of xs and ys
+     @param[in]      xs     Input  array xs
+     @param[in, out] ys     Output array ys    
+     @param[in]      alpha  Linear coefficient 
+     @return         Void 
+  */
+extern "C"
+auto daxpy(size_t n, double const* xs, double* ys, double alpha, double beta) -> void;
+```
+![](./Attachments/Function_C.png)
+
+### Class
+```
+/// @brief Class for plotting cuves, equations and differential equations.
+/// @author Ghost Author 
+class XYChart{
+public:
+    /// @brief Construct plot object with a given dimension.
+    ///
+    /// @pre The chart size must not be negative. 
+    ///
+    /// @param width  Initial XYChart width
+    /// @param height Initial XYChart length
+    /// 
+    XYChart(double width, double length);
+
+    /// Class destructor 
+    virtual ~XYChart() = default;
+
+    /// @brief Clear chart
+    /// @details Clear all drawings and plots in the chart area.
+    virtual void clear();
+
+    /// @brief Add curve x[i], y[i] to chart
+    ///
+    /// @pre  Precondition: the arrays x[] and y[] must have size n.
+    /// @post There are no post conditions.
+    /// 
+    /// @param n  array size
+    /// @param x  array of x-coordinates values 
+    /// @param y  array of y-coordinates values 
+    /// @return   Void
+    ///
+    /// @details
+    /// Plot the curve compriseds of points P[i] = (X[i], Y[i]),
+    /// where i = 0, 1, 2... n - 1.
+    ///
+    void addCurve(size_t n, const double x[], const double y[]);
+
+    /// Copy constructor 
+    XYChart(Plotter const&) = delete;
+    /// Copy-assignment operator 
+    XYChart& operator=(XYChart const&) = delete;
+private:
+};
+```
+![](./Attachments/Class.png)
+
+### Constructor
+```
+/// @brief Construct plot object with a given dimension.
+///
+/// @pre The chart size must not be negative. 
+///
+/// @param width  Initial XYChart width
+/// @param height Initial XYChart length
+/// 
+XYChart(double width, double length);
+```
+![](./Attachments/Constructor.png)
+
+### Method
+```
+/// @brief Add curve x[i], y[i] to chart
+///
+/// @pre  Precondition: the arrays x[] and y[] must have size n.
+/// @post There are no post conditions.
+/// 
+/// @param n  array size
+/// @param x  array of x-coordinates values 
+/// @param y  array of y-coordinates values 
+/// @return   Void
+///
+/// @details
+/// Plot the curve compriseds of points P[i] = (X[i], Y[i]),
+/// where i = 0, 1, 2... n - 1.
+///
+void addCurve(size_t n, const double x[], const double y[]);
+```
+![](./Attachments/Method.png)
