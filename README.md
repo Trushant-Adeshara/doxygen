@@ -94,11 +94,13 @@ Following tags should be used to document Functions, Classes, Methods and so on
 | Tag                                  | Description                                                       |
 | ------------------------------------ | ----------------------------------------------------------------- |
 | **General Description**              |                                                                   |
+|                                      |                                                                   |
 | ```@brief```                         | Brief description of class or function (fits a single line)       |
 | ```@details```                       | Details about class or function                                   |
 | ```@author <AUTHOR NAME>```          | Inert author name                                                 |
 |                                      |                                                                   |
 | **Function Or Method Documentation** |                                                                   |
+|                                      |                                                                   |
 | ```@param <PARAM> <DESCR>```         | Function or method parameter description                          |
 | ```@param[in] <PARAM> <DESCR>```     | Input parameter (C-function)                                      |
 | ```@param[out] <PARAM> <DESCR>```    | Output parameter of C-style function that return multiple values  |
@@ -110,9 +112,11 @@ Following tags should be used to document Functions, Classes, Methods and so on
 | ```@return <DESCR>```                | Description of return value or type                               |
 |                                      |                                                                   |
 | **Code Blocks**                      |                                                                   |
+|                                      |                                                                   |
 | ```@code ... <C++-Code>.. @encode``` | C++ code example.                                                 |
 |                                      |                                                                   |
 | **Miscellaneous**                    |                                                                   |
+|                                      |                                                                   |
 | ```@remark```                        | Additional side-notes                                             |
 | ```@note```                          | Insert additional node                                            |
 | ```@warning```                       |                                                                   |
