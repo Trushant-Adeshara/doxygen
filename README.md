@@ -72,12 +72,12 @@ EXCLUDE_PATTERNS= */test/*
 
 Following tags should be placed at the top of file.
 
-| Tag                   | Description       |
-| --------------------- | ----------------- |
-| @file <FILENAME>      | File Name         |
-| @author <AUTHOR_NAME> | Author Name       |
-| @brief <BRIEF>        | Short description |
-| @date <DATE>          | Date              |
+| Tag                         | Description       |
+| --------------------------- | ----------------- |
+| ```@file <FILENAME>```      | File Name         |
+| ```@author <AUTHOR_NAME>``` | Author Name       |
+| ```@brief <BRIEF>```        | Short description |
+| ```@date <DATE>```          | Date              |
 
 Example implementation: => FILE: WIDoc.hpp
 ```
@@ -93,12 +93,12 @@ Following tags should be used to document Functions, Classes, Methods and so on
 
 | Tag                                  | Description                                                       |
 | ------------------------------------ | ----------------------------------------------------------------- |
-| General Description                  |                                                                   |
+| General Description                  ||
 | ```@brief```                         | Brief description of class or function (fits a single line)       |
 | ```@details```                       | Details about class or function                                   |
 | ```@author <AUTHOR NAME>```          | Inert author name                                                 |
-|                                      |                                                                   |
-| Function Or Method Documentation     |                                                                   |
+|                                      ||
+| Function Or Method Documentation     ||
 | ```@param <PARAM> <DESCR>```         | Function or method parameter description                          |
 | ```@param[in] <PARAM> <DESCR>```     | Input parameter (C-function)                                      |
 | ```@param[out] <PARAM> <DESCR>```    | Output parameter of C-style function that return multiple values  |
@@ -108,11 +108,11 @@ Following tags should be used to document Functions, Classes, Methods and so on
 | ```@pre <DESCR>```                   | Pre conditions                                                    |
 | ```@post <DESCR>```                  | Post conditions                                                   |
 | ```@return <DESCR>```                | Description of return value or type                               |
-|                                      |                                                                   |
-| Code Blocks                          |                                                                   |
+|                                      ||
+| Code Blocks                          ||
 | ```@code ... <C++-Code>.. @encode``` | C++ code example.                                                 |
-|                                      |                                                                   |
-| Miscellaneous                        |                                                                   |
+|                                      ||
+| Miscellaneous                        ||
 | ```@remark```                        | Additional side-notes                                             |
 | ```@note```                          | Insert additional node                                            |
 | ```@warning```                       |                                                                   |
