@@ -4,6 +4,7 @@ Contains installation, setup and usage guide for doxygen for code documentation
 #### Table of Content
 1. [Installation](#installation)
 2. [Configuration File](#configuration-file)
+3. [Tag Reference](#tag-reference)
 
 ## Installation
 [Link to official guide](https://doxygen.nl/download.html)
@@ -66,5 +67,26 @@ Note:
 ```
 EXCLUDE_PATTERNS= */test/*
 ```
- 
+
+## Tag Reference 
+
+Following tags should be placed at the top of file.
+
+| Tag                   | Description       |
+| --------------------- | ----------------- |
+| @file <FILENAME>      | File Name         |
+| @author <AUTHOR_NAME> | Author Name       |
+| @brief <BRIEF>        | Short description |
+| @date <DATE>          | Date              | 
+
+Example implementation: => FILE: WIDoc.hpp
+```
+/**
+ * @file   WIDoc.hpp
+ * @brief  WI Documentation Format
+ * @author Somebody from WI
+ * @date   2021-05-27
+ ***************************************************/
+```
+
 [Refer](https://caiorss.github.io/C-Cpp-Notes/Doxygen-documentation.html#orgdb236cd)
