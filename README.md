@@ -77,7 +77,7 @@ Following tags should be placed at the top of file.
 | @file <FILENAME>      | File Name         |
 | @author <AUTHOR_NAME> | Author Name       |
 | @brief <BRIEF>        | Short description |
-| @date <DATE>          | Date              | 
+| @date <DATE>          | Date              |
 
 Example implementation: => FILE: WIDoc.hpp
 ```
@@ -87,6 +87,38 @@ Example implementation: => FILE: WIDoc.hpp
  * @author Somebody from WI
  * @date   2021-05-27
  ***************************************************/
+```
+
+Following tags should be used to document Functions, Classes, Methods and so on
+
+| Tag                                  | Description                                                       |
+| ------------------------------------ | ----------------------------------------------------------------- |
+| General Description                  |                                                                   |
+| ```@brief```                         | Brief description of class or function (fits a single line)       |
+| ```@details```                       | Details about class or function                                   |
+| ```@author <AUTHOR NAME>```          | Inert author name                                                 |
+|                                      |                                                                   |
+| Function Or Method Documentation     |                                                                   |
+| ```@param <PARAM> <DESCR>```         | Function or method parameter description                          |
+| ```@param[in] <PARAM> <DESCR>```     | Input parameter (C-function)                                      |
+| ```@param[out] <PARAM> <DESCR>```    | Output parameter of C-style function that return multiple values  |
+| ```@param[in, out] <PARAM> <DESCR``` | Parameter used for both input and output in a C-style function.   |
+| ```@tparam <PARAM> <DESCR>```        | Template type parameter                                           |
+| ```@trhow <EXCEP-DESCR>```           | Specify exceptions that a function can throw                      |
+| ```@pre <DESCR>```                   | Pre conditions                                                    |
+| ```@post <DESCR>```                  | Post conditions                                                   |
+| ```@return <DESCR>```                | Description of return value or type                               |
+|                                      |                                                                   |
+| Code Blocks                          |                                                                   |
+| ```@code ... <C++-Code>.. @encode``` | C++ code example.                                                 |
+|                                      |                                                                   |
+| Miscellaneous                        |                                                                   |
+| ```@remark```                        | Additional side-notes                                             |
+| ```@note```                          | Insert additional node                                            |
+| ```@warning```                       |                                                                   |
+| ```@see SomeClass::Method```         | Reference to some class, method, or website                       |
+| ```@li```                            | Bullet point                                                      |
+| ```@todo <TODO-NOTE>```              | TODO annotation, remainders about what is still needs to be done. | 
 ```
 
 [Refer](https://caiorss.github.io/C-Cpp-Notes/Doxygen-documentation.html#orgdb236cd)
