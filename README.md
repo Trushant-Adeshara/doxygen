@@ -4,8 +4,8 @@ Contains installation, setup and usage guide for doxygen for code documentation
 
 #### Table of Content
 1. [Installation](#installation)
-	1.1. [ROS](#ros)
-	1.2. [Standard](#standard)
+- 1.1. [ROS](#ros)
+- 1.2. [Standard](#standard)
 2. [Configuration File](#configuration-file)
 3. [Tag Reference](#tag-reference)
 
@@ -40,8 +40,8 @@ Options:
 	                                 Ex: /home/user/tagfiles_list.yaml
 	
 	-g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
-									 This will generate a doxygen tagfile.
-									 Ex: /home/user/tags/pacakge.tag
+					 This will generate a doxygen tagfile.
+					 Ex: /home/user/tags/pacakge.tag
 ```
 
 Generate documentation for a package:
