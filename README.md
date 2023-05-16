@@ -30,7 +30,7 @@ Install rosdoc_lite:
 apt-get install ros-$ROS_DISTRO-rosdoc-lite
 ```
 
-Above command should install **doxygen** from upstream pacakge but if it doesn't you can run following command:
+Above command to install **doxygen** from upstream pacakge but if it doesn't you can run following command:
 ```
 sudo apt-get install doxygen
 ```
